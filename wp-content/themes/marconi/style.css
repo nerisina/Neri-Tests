@@ -1,0 +1,716 @@
+ /*
+Theme Name: WP Bootstrap
+Theme URI: http://teamtreehouse.com/how-to-build-a-simple-responsive-wordpress-site-with-twitter-bootstrap
+Description: A simple responsive theme built with Bootstrap
+Author: Zac Gordon
+Author URI: http://zacgordon.com/
+Version: 1.0
+Tags: responsive, white, bootstrap
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This is an example theme to go along with the Treehouse blog post on <a href="http://teamtreehouse.com/how-to-build-a-responsive-wordpress-site-with-twitter-bootstrap">How to Build a Simple Responsive WordPress Site Using Twitter Bootstrap</a>.
+*/
+
+@import url('bootstrap/css/bootstrap.css');
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+
+body{
+	font-family: 'Raleway', Arial, sans-serif;
+}
+header{
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+}
+nav{
+	color: #000;
+}
+nav ul.nav{
+	margin-top: 30px;
+}
+nav ul.nav > li > a{
+	padding: 10px 8px;
+}
+.mc-nav{
+	background: rgba(255,218,57,0.9);
+}
+#wpadminbar{
+	display: none !important;
+}
+ul.mc-nav li a{
+	color: #fff !important;
+}
+
+/* Galery */
+.carousel-inner{
+	height: 100%;
+}
+
+/* Navigation Arrow */
+a.carousel-control span {
+	position: absolute;
+	top: 50%;
+	z-index: 1000;
+	display: block;
+	width: 100px;
+	height: 100px;
+	outline: none;
+	text-align: left;
+	cursor: pointer;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+a.carousel-control span.mc-next {
+	right: 0;
+}
+
+a.carousel-control i {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+a.carousel-control span::before,
+a.carousel-control span::after,
+a.carousel-control i::before,
+a.carousel-control i::after {
+	position: absolute;
+	left: 50%;
+	width: 3px;
+	height: 50%;
+	outline: 1px solid transparent;
+	background: #dbccd0;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+a.carousel-control i::before,
+a.carousel-control i::after {
+	z-index: 100;
+	height: 0;
+	background: #fff;
+	-webkit-transition: height 0.3s, -webkit-transform 0.3s;
+	transition: height 0.3s, transform 0.3s;
+}
+
+a.carousel-control span::before,
+a.carousel-control i::before {
+	top: 50%;
+	-webkit-transform: translateX(-50%) rotate(-135deg);
+	transform: translateX(-50%) rotate(-135deg);
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+}
+
+a.carousel-control span.mc-next::before,
+a.carousel-control span.mc-next i::before {
+	-webkit-transform: translateX(-50%) rotate(135deg);
+	transform: translateX(-50%) rotate(135deg);
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+}
+
+a.carousel-control span::after,
+a.carousel-control i::after {
+	top: 50%;
+	-webkit-transform: translateX(-50%) rotate(-45deg);
+	transform: translateX(-50%) rotate(-45deg);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+a.carousel-control span.mc-next::after,
+a.carousel-control span.mc-next i::after {
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+	-webkit-transform-origin: 100% 0%;
+	transform-origin: 100% 0%;
+}
+
+a.carousel-control span:hover i::before,
+a.carousel-control span:hover i::after {
+	height: 50%;
+}
+
+a.carousel-control span:hover::before,
+a.carousel-control span:hover i::before {
+	-webkit-transform: translateX(-50%) rotate(-125deg);
+	transform: translateX(-50%) rotate(-125deg);
+}
+
+a.carousel-control span.mc-next:hover::before,
+a.carousel-control span.mc-next:hover i::before {
+	-webkit-transform: translateX(-50%) rotate(125deg);
+	transform: translateX(-50%) rotate(125deg);
+}
+
+a.carousel-control span:hover::after,
+a.carousel-control span:hover i::after {
+	-webkit-transform: translateX(-50%) rotate(-55deg);
+	transform: translateX(-50%) rotate(-55deg);
+}
+
+a.carousel-control span.mc-next:hover::after,
+a.carousel-control span.mc-next:hover i::after {
+	-webkit-transform: translateX(-50%) rotate(55deg);
+	transform: translateX(-50%) rotate(55deg);
+}
+/* end nav carousel*/
+.m-logo-img {
+	display: block;
+	float: left;
+	padding: 10px 10px 10px 35px;
+	width: 160px;
+	height: 120px;
+	margin-right: 18px;
+}
+.m-logo-img img{
+	height: 100%;
+	width: 100%;
+}
+.navbar-brand.m-title{
+	/*color: #2a6496;*/
+	color: #fff !important;
+	font-size: 35px;
+	margin-top: 25px;
+	font-family: 'Oswald', sans-serif;
+}
+.m-nav-header{
+	text-transform: uppercase;
+}
+.m-carousel{
+	width: 100%;
+	position: relative;
+	top: -120px;
+}
+.m-title-post{
+	color: #386879;
+}
+.m-grid-scholars.col-xs-6.col-sm-3{
+	text-align: center !important;
+}
+.mc-fb,
+.mc-tw,
+.mc-gg,
+.mc-lk{
+	background: url('bootstrap/img/mc-facebook.png');
+	background-size: 60px;
+	height: 60px;
+	width: 60px;
+	text-indent: -9999px;
+	display: inline-block; 
+}
+.mc-tw{
+	background: url('bootstrap/img/mc-twitter.png');
+	background-size: 60px;
+}
+.mc-gg{
+	background: url('bootstrap/img/mc-google.png');
+	background-size: 60px;
+}
+.mc-lk{
+	background: url('bootstrap/img/mc-linkedin.png');
+	background-size: 60px;
+}
+.mc-share{
+	margin-top: 20px;
+	text-align: center;
+}
+
+/* Footer */
+footer{
+	text-align: center;
+}
+.m-copy{
+	margin-top: 15px;
+	color: #8296A1;
+}
+/*carousel*/
+.carousel{
+	height: 705px;
+	margin-bottom: 60px;
+}
+.carousel .item{
+	width: 100%;
+	height: 100%;
+}
+.glyphicon-chevron-left:before{
+	content: "<" !important;
+	font-size: 30px !important;
+}
+.glyphicon-chevron-right:before {
+	content: ">" !important;
+	font-size: 30px !important;
+}
+/* resume */
+
+.mc-title-principal h1{
+	margin: 30px 0 0;
+	text-align: center;
+	font-size: 70px;
+	color: #444;
+	text-transform: uppercase;
+}
+.mc-title-principal h1 span{
+	display: block;
+	color: #7f7f7f;
+	font-size: 33px;
+}
+.mc-sub-title{
+	width: 53%;
+	font-size: 17px;
+	color: #717d85;
+	text-align: center;
+	margin: 25px auto 0;
+}
+.mc-hint{
+	color: #469fd1;
+	width: 40%;
+	font-size: 15px;
+	text-align: center;
+	margin: 8px auto;
+}
+.mc-resume{
+	margin-top: 60px;
+	margin-bottom: 100px;
+}
+.img-circle-size{
+	width: 140px;
+	height: 140px;	
+}
+/* News  */
+.mc-titre-last-news{
+	border-top:2px solid #ff6400;
+	border-bottom: 2px solid #ff6400;
+	margin-bottom: 110px;
+	text-align: center;
+}
+.mc-news{
+	/*background: #132845;*/
+	margin-bottom: 200px;
+	height: 570px;
+}
+.mc-post{
+	width: 275px;
+	height: 245px;
+	padding: 30px;
+	/*text-align: center;*/
+	/*background: #f4f4f4;*/
+	background: #132845;
+	margin-bottom: 50px;
+	-webkit-transform: skew(0deg,25deg);
+	-moz-transform: skew(0deg,25deg);
+	-ms-transform: skew(0deg,25deg);
+	-o-transform: skew(0deg,25deg);
+	transform: skew(0deg,25deg);
+
+}
+.mc-post h3{
+	font-size: 16px;
+	white-space:nowrap; 
+	overflow:hidden;
+	text-overflow:ellipsis; 
+	line-height: 20px;
+	width: 170px;
+	margin-bottom: 0px;
+}
+.mc-post h3 a{
+	color: rgba(255,218,57,0.9);
+}
+.mc-post h4{
+	margin-top: 0px;
+	font-size: 14px;
+	color: #ddd;
+}
+.mc-post p{
+	font-size: 12px;
+	color: #f4f4f4;
+}
+.mc-post h3,
+.mc-post h4,
+.mc-post p{
+	-webkit-transform: skew(0deg,-25deg);
+	-moz-transform: skew(0deg,-25deg);
+	-ms-transform: skew(0deg,-25deg);
+	-o-transform: skew(0deg,-25deg);
+	transform: skew(0deg,-25deg);
+}
+
+/* page Celestin */
+.mc-celestin-content{
+	background: url(bootstrap/img/bg-celestin.jpg)no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+	width: 100%;
+	height: auto;
+}
+.mc-photo-banner-content{
+	width: 500px;
+	margin-top: 290px;
+	margin-bottom: 180px;
+	padding: 20px;
+	background-color: rgba(22, 26, 22, 0.5);	
+}
+.mc-photo-banner-content h1{
+	color: #fff;
+	text-align: center;
+	font-size: 35px;
+}
+.mc-photo-banner-content p{
+	color: #fff !important;
+	text-align: center;
+
+}
+.mc-description-celestin{
+	height: 100%;
+}
+.mc-block-description-celestin{
+	background: #fff;
+}
+.mc-description-celestin h1{
+	color: #444;
+	text-align: center;
+	margin-top:60px;
+	margin-bottom: 0px;
+	font-size: 50px;
+}
+.mc-description-celestin h2{
+	color: #7f7f7f;
+	text-align: center;
+	font-size: 30px;
+	margin-top: -4px;
+	margin-bottom: 30px;
+}
+
+/* About */
+.mc-about-content{
+	background: url(bootstrap/img/bg-about.jpg)no-repeat top center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+	width: 100%;
+	height: 660px;
+}
+.mc-content-about{
+	padding: 20px;
+	margin-bottom: 170px;
+	margin-top: 170px;
+	background-color: rgba(22, 26, 22, 0.5);	
+}
+.mc-content-about h1{
+	color: #fff;
+	text-align: center;
+	font-size: 35px;
+}
+.mc-content-about p{
+	color: #fff !important;
+	text-align: center;
+
+}
+/* Meet the scholars */
+#mc-map-canvas{
+	width: 100%;
+	height: 100%;
+	position: absolute !important;
+}
+.mc-meet-shcolars{
+	margin-top: 200px;
+}
+.mc-meet-shcolars h1{
+	text-align: center;
+	color: #fff;
+}
+.mc-mts{
+	padding-bottom: 200px;
+	background: url(bootstrap/img/bg-mts.png)no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+}
+.modal-content{
+	border-radius: 1px !important; 
+}
+.modal-dialog{
+	margin-top: 25%;
+	margin-left: 45%;
+}
+.modal-body h1{
+	font-family: 'Oswald', sans-serif;
+	margin-top: 0px;
+}
+#map_canvas {
+    width: 500px;
+    height: 400px;
+}
+
+/* Share */
+.schoolar-linkedin{
+
+}
+/*
+*********
+		*
+*********
+*/
+.mc-grid {
+    margin: 35px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    width: 100%;
+}
+ 
+.mc-grid li {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 16.6666667%; /* Fallback */
+    width: -webkit-calc(100% / 6);
+    width: calc(100% / 6);
+}
+ 
+.mc-grid li a,
+.mc-grid li a img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+ 
+.mc-grid li a img {
+    max-width: 100%;
+    height: 175px;
+}
+ 
+/* Flexbox is used for centering the heading */
+.mc-grid li a div {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255,218,57,0.6);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+}
+ 
+.mc-grid li a:hover div {
+    opacity: 1;
+}
+ 
+.mc-grid li a div h3 {
+    width: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    padding: 0 10px;
+}
+
+/* contact */
+#map-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+#map
+{
+    width: 100%;
+    height: 100%;
+}
+.mc-contact{
+	padding: 20px;
+	margin-top: 170px;
+	background-color: rgba(22, 26, 22, 0.5);
+	color: #fff;
+}
+.mc-contact a{
+	color: rgba(255,218,57,1);
+}
+.mc-titre-contacts{
+	color: #8296A1;
+	text-transform: uppercase;
+	text-align: center;
+}
+.mc-social-media, .mc-contact{
+	text-align: center;
+}
+.mc-facebook{
+	background: url(bootstrap/img/mc-facebook.png);
+	background-size: 30px;
+	text-indent: -9999px; 
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+.mc-twitter{
+	background: url(bootstrap/img/mc-twitter.png);
+	background-size: 30px;
+	text-indent: -9999px; 
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+
+/* post details **/
+
+.main.single{
+	margin-top: 170px;
+}
+.main.single h1.post-title{
+	font-size: 45px;
+	letter-spacing: -2px;
+	text-decoration: underline;
+}
+
+.mc-post-single{
+	border: 5px solid #ff6400;
+}
+.mc-post-single .post{
+	padding: 30px;
+}
+.mc-lastest-post{
+	background: #eee;
+	color: #ff6400;
+	padding: 10px;
+}
+.mc-lastest-post h3{
+	text-align: center;
+	border-bottom: 2px solid #000;
+	width: 151px;
+	margin-left: 45px;
+}
+.mc-lastest-post ul{
+	padding-left: 35px; 
+}
+.mc-header-single-post{
+	color: #000;
+}
+/* index */
+.mc-index{
+	margin-top: 170px;
+}
+
+/* Example for media query: change number of items per row */
+ 
+@media screen and (max-width: 1190px) {
+    .mc-grid li {
+        width: 20%; /* Fallback */
+        width: -webkit-calc(100% / 5);
+        width: calc(100% / 5);
+    }
+}
+ 
+@media screen and (max-width: 945px) {
+    .mc-grid li {
+        width: 25%; /* Fallback */
+        width: -webkit-calc(100% / 4);
+        width: calc(100% / 4);
+    }
+}
+ 
+@media screen and (max-width: 660px) {
+    .mc-grid li {
+        width: 33.3333333%; /* Fallback */
+        width: -webkit-calc(100% / 3);
+        width: calc(100% / 3);
+    }
+}
+ 
+@media screen and (max-width: 660px) {
+    .mc-grid li {
+        width: 33.3333333%; /* Fallback */
+        width: -webkit-calc(100% / 3);
+        width: calc(100% / 3);
+    }
+}
+ 
+@media screen and (max-width: 400px) {
+    .mc-grid li {
+        width: 50%; /* Fallback */
+        width: -webkit-calc(100% / 2);
+        width: calc(100% / 2);
+    }
+}
+ 
+@media screen and (max-width: 300px) {
+    .mc-grid li {
+        width: 100%;
+    }
+}
+
+/**/
+
+
+/* @medias queries */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+/* Styles */
+.carousel .item,
+.carousel{
+	height: 705px !important;
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@mediaonly screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
